@@ -1,0 +1,9 @@
+cd /etc/logstash/conf.d
+
+cd /usr/share/logstash/bin
+sudo ./logstash -f /etc/logstash/conf.d/syslog.conf
+
+aws es describe-elasticsearch-domain --domain-name demoaws
+
+cd /usr/share/logstash
+sudo bin/logstash-plugin install logstash-output-amazon_es
